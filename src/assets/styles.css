@@ -1,0 +1,33 @@
+body {
+	background: var(--bs-gray-100);
+}
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	height: 70px;
+	margin-bottom: 70px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	display: inline-block;
+	font-size: 1.5rem;
+}
+
+
+
+.tasks {
+    padding: 16px;
+    background: var(--bs-gray-200);
+    border-radius: 8px;
+}
+
+.results {
+	position: sticky;
+	top: 0;
+	max-height: 100vh;
+	overflow-y: auto;
+  }

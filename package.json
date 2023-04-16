@@ -1,0 +1,21 @@
+{
+  "name": "epic-decomposer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "fs": "0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "vue": "^3.2.47",
+    "yaml": "^2.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.1.4"
+  }
+}
