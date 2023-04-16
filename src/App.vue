@@ -2,7 +2,7 @@
 	<div class="container">
 		<header>
 			<h1 class="logo">✨ Epic Decomposer</h1>
-			<button class="btn btn-sm btn-outline-secondary" @click="resetData">Сбросить</button>
+			<button class="btn btn-sm btn-outline-secondary" @click="resetData">Reset</button>
 		</header>
 	</div>
 	<div id="app" class="container">	  
@@ -11,13 +11,13 @@
 			<div class="tasks">
 				<div class="row">
 					<div class="col-md-12">
-						<label for="epicName">Название эпика:</label>
+						<label for="epicName">Epic name:</label>
 						<input id="epicName" type="text" class="form-control mb-5" v-model="epicName" @input="saveState" placeholder="Построить космолёт">
 					</div>
 				</div>
 
 			<div class="stage" v-for="(stage, stageIndex) in stages" :key="'stage' + stageIndex">
-				<h4>{{ stage.name }}: {{ stageTotalTime(stage) }} ч.</h4>				
+				<h4>{{ stage.name }}: {{ stageTotalTime(stage) }} h.</h4>				
 				<div class="task-item" v-for="(task, taskIndex) in tasksByStage(stage)" :key="'task' + taskIndex">
 				<task-item 
 					:task="task" 
@@ -29,19 +29,18 @@
 		</div>
 		</div>
 		<div class="col-md-6 results">
-		  <h4>Оценка</h4>
 		  <div 
 		  	v-for="(stage, index) in stages" :key="'result' + index" 
-			class="d-flex justify-content-between"
+			class="output-stage"
 			>
-			<h6>[{{ stage.name }}] {{ epicName }}: {{ stageTotalTime(stage) }} ч.</h6>
-			<button class="btn btn-sm btn-outline-dark" @click="copyToClipboard(stage)">Копировать</button>
+			<h6>[{{ stage.name }}] {{ epicName }}: {{ stageTotalTime(stage) }} h.</h6>
+			<button class="btn btn-sm btn-outline-dark" @click="copyToClipboard(stage)">Copy</button>
 			<div class="highlight">
-			  <pre class="pre-scrollable"><code>{{ filteredTasks(stage).map(task => `${task.name} - ${task.time} ч.`).join('\n') }}
+			  <pre class="pre-scrollable"><code>{{ filteredTasks(stage).map(task => `* ${task.name} - ${task.time}`).join('\n') }}
 			  </code></pre>
 			</div>
 		  </div>
-		  <h6>Общее время: {{ totalTime }} ч.</h6>
+		  <h6>Total time: {{ totalTime }} h.</h6>
 		</div>
 	  </div>
 	</div>
@@ -118,7 +117,7 @@
 			return (totalTime % 1 === 0) ? totalTime.toFixed(0) : totalTime.toFixed(1);
 			},
 		copyToClipboard(stage) {
-			const content = this.filteredTasks(stage).map(task => `${task.name} - ${task.time} ч.`).join('\n');
+			const content = this.filteredTasks(stage).map(task => `* ${task.name} - ${task.time}`).join('\n');
 			navigator.clipboard.writeText(content);
 		},
 

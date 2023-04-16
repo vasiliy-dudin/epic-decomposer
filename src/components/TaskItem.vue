@@ -5,7 +5,7 @@
 	</div>
 	<div class="input-time">
 	  <input type="number" class="form-control input-time__input" :value="task.time" @input="timeChange" step="0.5" min="0" />
-	  <span> ч.</span>
+	  <span> h.</span>
 	</div>
   </template>
   
