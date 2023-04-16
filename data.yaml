@@ -1,0 +1,56 @@
+# data.yaml
+stages:
+  - name: Открытие
+  - name: Определение
+  - name: Разработка
+  - name: Доставка
+
+tasks:
+  - name: 222Исслываываедование пользователей
+    stage: Открытие
+    time: 60
+    checked: false
+  - name: Интервью с заинтересованными сторонами
+    stage: Открытие
+    time: 45
+    checked: false
+  - name: Анализ конкурентов
+    stage: Открытие
+    time: 30
+    checked: false
+  - name: Определение проблемы
+    stage: Определение
+    time: 60
+    checked: false
+  - name: Приоритизация требований
+    stage: Определение
+    time: 45
+    checked: false
+  - name: Создание пользовательских сценариев
+    stage: Определение
+    time: 30
+    checked: false
+  - name: Создание прототипа
+    stage: Разработка
+    time: 120
+    checked: false
+  - name: Тестирование прототипа
+    stage: Разработка
+    time: 60
+    checked: false
+  - name: Получение обратной связи
+    stage: Разработка
+    time: 45
+    checked: false
+  - name: Внедрение решения
+    stage: Доставка
+    time: 120
+    checked: false
+  - name: Оценка результатов
+    stage: Доставка
+    time: 60
+    checked: false
+  - name: Планирование дальнейших улучшений
+    stage: Доставка
+    time: 30
+    checked: false
