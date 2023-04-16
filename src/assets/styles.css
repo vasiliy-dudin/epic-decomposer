@@ -1,12 +1,19 @@
 body {
-	background: var(--bs-gray-100);
+    color: #393b43;
+	font-family: 'Inter', sans-serif;
+	
+	
 }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
 
 header {
 	display: flex;
 	flex-wrap: wrap;
-	height: 70px;
-	margin-bottom: 70px;
+	margin: 24px 0 48px;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
@@ -15,15 +22,46 @@ header {
 .logo {
 	display: inline-block;
 	font-size: 1.5rem;
+	margin: 0;
 }
 
 
 
 .tasks {
     padding: 16px;
-    background: var(--bs-gray-200);
+    background: #eef2f6;
     border-radius: 8px;
 }
+
+.stage {
+	display: flex;
+    flex-direction: column;
+	gap: 8px;
+	margin-bottom: 32px;
+}
+
+.task-item {
+    display: flex;
+}
+.form-check {
+    flex: 1 0 auto;
+}
+.input-time {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+}
+.input-time__input {
+	width: 90px;
+	margin-right: 8px;
+}
+
+.table {
+	--bs-table-border-color: #ced4da;
+}
+
+
+
 
 .results {
 	position: sticky;

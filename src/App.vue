@@ -1,10 +1,10 @@
 <template>
-	<header>
-		<div class="container">
-			<h1 class="logo">Epic Decomposer</h1>
-			<button class="btn btn-sm btn-light ms-3" @click="resetData">Сбросить</button>
-		</div>		
-	</header>
+	<div class="container">
+		<header>
+			<h1 class="logo">✨ Epic Decomposer</h1>
+			<button class="btn btn-sm btn-outline-secondary" @click="resetData">Сбросить</button>
+		</header>
+	</div>
 	<div id="app" class="container">	  
 	  <div class="row">
 		<div class="col-md-6">
@@ -16,34 +16,32 @@
 					</div>
 				</div>
 
-			<div v-for="(stage, stageIndex) in stages" :key="'stage' + stageIndex">
-				<h2>{{ stage.name }}: {{ stageTotalTime(stage) }} ч.</h2>
-				<table class="table table-bordered">
-				<tbody>
-					<tr v-for="(task, taskIndex) in tasksByStage(stage)" :key="'task' + taskIndex">
-					<td>
-						<task-item :task="task" @toggleCheck="toggleCheck" @timeChange="timeChange"></task-item>
-					</td>
-					</tr>
-				</tbody>
-				</table>
+			<div class="stage" v-for="(stage, stageIndex) in stages" :key="'stage' + stageIndex">
+				<h4>{{ stage.name }}: {{ stageTotalTime(stage) }} ч.</h4>				
+				<div class="task-item" v-for="(task, taskIndex) in tasksByStage(stage)" :key="'task' + taskIndex">
+				<task-item 
+					:task="task" 
+					@toggleCheck="toggleCheck"
+					@timeChange="timeChange">
+				</task-item>
+			</div>			
 			</div>
 		</div>
 		</div>
 		<div class="col-md-6 results">
-		  <h2>Результаты:</h2>
+		  <h4>Оценка</h4>
 		  <div 
 		  	v-for="(stage, index) in stages" :key="'result' + index" 
 			class="d-flex justify-content-between"
 			>
-			<h3>[{{ stage.name }}] {{ epicName }}: {{ stageTotalTime(stage) }} ч.</h3>
+			<h6>[{{ stage.name }}] {{ epicName }}: {{ stageTotalTime(stage) }} ч.</h6>
 			<button class="btn btn-sm btn-outline-dark" @click="copyToClipboard(stage)">Копировать</button>
 			<div class="highlight">
 			  <pre class="pre-scrollable"><code>{{ filteredTasks(stage).map(task => `${task.name} - ${task.time} ч.`).join('\n') }}
 			  </code></pre>
 			</div>
 		  </div>
-		  <h2>Общее время: {{ totalTime }} ч.</h2>
+		  <h6>Общее время: {{ totalTime }} ч.</h6>
 		</div>
 	  </div>
 	</div>
@@ -64,16 +62,18 @@
 
 
 	data() {
-	return {
-	  tasks: [],
-	  stages: [],
-	  epicName: '',
-	};
+		return {
+			tasks: [],
+			stages: [],
+			epicName: '',
+			defaultTasks: [],
+		};
   },
   async mounted() {
 	const data = await loadData();
 	this.tasks = data.tasks;
 	this.stages = data.stages;
+	this.defaultTasks = this.tasks.map(task => ({ ...task }));
 	this.loadState();
 	this.updateTotalTime();
   },
@@ -97,7 +97,7 @@
 		return this.tasks.filter(task => task.stage === stage.name && task.checked);
 	  },
 	  timeChange(task, newValue) {
-			task.time = parseInt(newValue) || 0;
+			task.time = parseFloat(newValue) || 0;
 			this.updateTotalTime();
 			this.saveState();
 		},
@@ -124,32 +124,36 @@
 
 		saveState() {
 			const state = {
-			tasks: this.tasks,
-			epicName: this.epicName
+				tasks: this.tasks.map(task => ({
+				name: task.name,
+				checked: task.checked,
+				time: task.time
+				})),
+				epicName: this.epicName
 			};
 			localStorage.setItem('epicDecomposerState', JSON.stringify(state));
-		},
+			},
 		loadState() {
 			const savedState = localStorage.getItem('epicDecomposerState');
 			if (savedState) {
 				const state = JSON.parse(savedState);
-				this.tasks = state.tasks;
+				this.tasks = this.tasks.map(task => {
+				const savedTask = state.tasks.find(t => t.name === task.name);
+				return savedTask ? { ...task, ...savedTask } : task;
+				});
 				this.epicName = state.epicName;
 			}
 			},
 		resetData() {
-			this.tasks = this.tasks.map(task => ({
-			...task,
-			checked: false,
-			time: 0
-			}));
-			this.epicName = '';
-			this.saveState();
-		}
+				this.tasks = this.tasks.map((task, index) => ({
+					...task,
+					checked: false,
+					time: this.defaultTasks[index].time
+				}));
+				this.epicName = '';
+				this.saveState();
+				}
 
 	},
-	// mounted() {
-	//   this.updateTotalTime();
-	// }
   }
   </script>

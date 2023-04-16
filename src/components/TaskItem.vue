@@ -1,16 +1,13 @@
 <template>
-	<div class="task-item">
-	  <div class="form-check">
-		<input class="form-check-input" type="checkbox" :id="task.name" :checked="task.checked" @change="toggleCheck" />
-		<label class="form-check-label" :for="task.name">{{ task.name }}</label>
-	  </div>
-	  <div class="input-group mb-3 d-inline-block">
-		<input type="number" class="form-control" :value="task.time" @input="timeChange" step="0.5" min="0" /> ч.
-	  </div>
+	<div class="form-check">
+	  <input class="form-check-input" type="checkbox" :id="task.name" :checked="task.checked" @change="toggleCheck" />
+	  <label class="form-check-label" :for="task.name">{{ task.name }}</label>
+	</div>
+	<div class="input-time">
+	  <input type="number" class="form-control input-time__input" :value="task.time" @input="timeChange" step="0.5" min="0" />
+	  <span> ч.</span>
 	</div>
   </template>
-  
-  
   
   <script>
   export default {
@@ -28,4 +25,3 @@
 	}
   }
   </script>
-  
