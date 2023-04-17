@@ -1,18 +1,17 @@
 {
   "name": "epic-decomposer",
-  "version": "0.0.0",
+  "version": "0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "github-pages": "gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "fs": "0.0.1-security",
-    "js-yaml": "^4.1.0",
-    "vue": "^3.2.47",
-    "yaml": "^2.2.1"
+    "gh-pages": "^5.0.0",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

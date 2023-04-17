@@ -28,6 +28,7 @@ header {
 
 
 .tasks {
+	margin-bottom: 32px;
     padding: 16px;
     background: #eef2f6;
     border-radius: 8px;
