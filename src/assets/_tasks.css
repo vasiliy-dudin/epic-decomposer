@@ -1,0 +1,30 @@
+
+.tasks {
+	margin-bottom: 32px;
+	padding: 16px;
+	background: #eef2f6;
+	border-radius: 8px;
+}
+
+.stage {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 32px;
+}
+
+.task-item {
+	display: flex;
+}
+.form-check {
+	flex: 1 0 auto;
+}
+.input-time {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+}
+.input-time__input {
+	width: 90px;
+	margin-right: 8px;
+}

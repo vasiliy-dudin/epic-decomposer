@@ -1,0 +1,54 @@
+.results {
+	position: sticky;
+	top: 0;
+	max-height: 100vh;
+	overflow-y: auto;
+	gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-stage__header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #bcc4cd;
+}
+
+
+.output-stage__name {
+	margin: 0 8px 0 0;
+}
+
+.output-stage__time {
+	text-align: right;
+	margin-left: auto;
+}
+.output-stage__time__hours {
+	font-size: .75rem;
+	margin-left: 4px;
+}
+
+.output-stage__btn {
+	display: none;
+	flex-shrink: 0;
+	padding: 0 4px;
+}
+.output-stage:hover .output-stage__btn {
+	display: block;
+}
+
+
+pre {
+	margin-bottom: 0;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+
+
+.results-total {
+	display: flex;
+	gap: 8px;
+}
