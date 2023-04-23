@@ -52,6 +52,7 @@
 					v-for="(stage, index) in stages"
 					:key="'result' + index"
 					class="output-stage"
+					v-show="tasks.some(task => task.stage === stage.name && task.checked)"
 				>
 					<div class="output-stage__header">
 						<h6 class="output-stage__name">
