@@ -7,7 +7,7 @@
 			</button>
 		</header>
 	</div>
-	<div id="app" class="container">
+	<div id="app" class="container-fluid">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="tasks">
@@ -52,17 +52,21 @@
 					v-for="(stage, index) in stages"
 					:key="'result' + index"
 					class="output-stage"
-					v-show="tasks.some(task => task.stage === stage.name && task.checked)"
+					v-show="
+						tasks.some(
+							(task) => task.stage === stage.name && task.checked
+						)
+					"
 				>
 					<div class="output-stage__header">
 						<h6 class="output-stage__name">
 							[{{ stage.name }}] {{ epicName }}
 						</h6>
 						<button
-							class="output-stage__btn btn btn-sm btn-outline-dark"
-							@click="copyToClipboard(stage)"
+							class="output-stage__btn --CopyNameBtn btn btn-sm btn-outline-dark"
+							@click="copyStageNameToClipboard(stage)"
 						>
-							Copy Plan
+							Copy
 						</button>
 						<div class="output-stage__time">
 							{{ stageTotalTime(stage) / 4 }} d
@@ -71,9 +75,17 @@
 							>
 						</div>
 					</div>
-					<pre
-						class="pre-scrollable"
-					><code>{{ filteredTasks(stage).map(task => `* ${task.name} - ${task.time} ч.`).join('\n') }}</code></pre>
+					<div class="output-stage__plan">
+						<pre
+							class="pre-scrollable"
+						><code>{{ filteredTasks(stage).map(task => `* ${task.name} - ${task.time} ч.`).join('\n') }}</code></pre>
+						<button
+							class="output-stage__btn --CopyPlanBtn btn btn-sm btn-outline-dark"
+							@click="copyPlanToClipboard(stage)"
+						>
+							Copy Plan
+						</button>
+					</div>
 				</div>
 				<h6 class="results-total">
 					<span>Total:</span>
@@ -166,13 +178,18 @@
 					? totalTime.toFixed(0)
 					: totalTime.toFixed(1);
 			},
-			copyToClipboard(stage) {
+			copyPlanToClipboard(stage) {
 				const content =
 					"План \n" +
 					this.filteredTasks(stage)
 						.map((task) => `* ${task.name} - ${task.time}`)
 						.join("\n");
 				navigator.clipboard.writeText(content);
+			},
+			copyStageNameToClipboard(stage) {
+				navigator.clipboard.writeText(
+					`[${stage.name}] ${this.epicName}`
+				);
 			},
 
 			saveState() {

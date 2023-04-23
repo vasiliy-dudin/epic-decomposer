@@ -35,11 +35,27 @@
 	flex-shrink: 0;
 	padding: 0 4px;
 }
-.output-stage:hover .output-stage__btn {
+.output-stage__btn.--CopyNameBtn {
+	
+}
+.output-stage__btn.--CopyPlanBtn {
+	position: absolute;
+    left: 10%;
+    top: -2px;
+}
+.output-stage__header:hover .--CopyNameBtn {
+	display: block;
+}
+.output-stage__plan:hover .--CopyPlanBtn {
 	display: block;
 }
 
 
+
+.output-stage__plan {
+	position: relative;
+	padding: 16px 0 16px 16px;
+}
 pre {
 	margin-bottom: 0;
     font-size: 0.8rem;
