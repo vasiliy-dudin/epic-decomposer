@@ -1,82 +1,247 @@
 {
 	"stages": [
-	  { "name": "Открытие" },
-	  { "name": "Определение" },
-	  { "name": "Разработка" },
-	  { "name": "Доставка" }
+	  { "name": "Discovery" },
+	  { "name": "Define" },
+	  { "name": "Ideation" },
+	  { "name": "Research" },
+	  { "name": "UI Design" },
+	  { "name": "Documentation" },
+	  { "name": "Design Review" }
 	],
 	"tasks": [
 	  {
-		"name": "Исследование пользователей",
-		"stage": "Открытие",
-		"time": 60,
+		"name": "Погружение в задачу",
+		"stage": "Discovery",
+		"time": 2,
+		"checked": true
+	  },
+	  {
+		"name": "Веб-аналитика",
+		"stage": "Discovery",
+		"time": 2,
 		"checked": false
 	  },
 	  {
-		"name": "Интервью с заинтересованными сторонами",
-		"stage": "Открытие",
-		"time": 45,
+		"name": "Исследование с экспертами",
+		"stage": "Discovery",
+		"time": 4,
 		"checked": false
 	  },
 	  {
 		"name": "Анализ конкурентов",
-		"stage": "Открытие",
-		"time": 30,
+		"stage": "Discovery",
+		"time": 3,
 		"checked": false
 	  },
 	  {
-		"name": "Определение проблемы",
-		"stage": "Определение",
-		"time": 60,
+		"name": "Дизайн исследования",
+		"stage": "Discovery",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "Поиск респондентов",
+		"stage": "Discovery",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "Пользовательское исследование",
+		"stage": "Discovery",
+		"time": 8,
+		"checked": false
+	  },
+	  {
+		"name": "Подготовка результатов исследования",
+		"stage": "Discovery",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "Декомпозиция задачи",
+		"stage": "Discovery",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "User flow as-is",
+		"stage": "Define",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "Формирование персон, сегментов или ролей пользователей",
+		"stage": "Define",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "User story",
+		"stage": "Define",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "User Story",
+		"stage": "Define",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "User Story Map",
+		"stage": "Define",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "CJM as-is",
+		"stage": "Define",
+		"time": 4,
+		"checked": false
+	  },
+	  {
+		"name": "Scenario map as-is",
+		"stage": "Define",
+		"time": 2,
 		"checked": false
 	  },
 	  {
 		"name": "Приоритизация требований",
-		"stage": "Определение",
-		"time": 45,
+		"stage": "Define",
+		"time": 1,
 		"checked": false
 	  },
 	  {
-		"name": "Создание пользовательских сценариев",
-		"stage": "Определение",
-		"time": 30,
+		"name": "Дальнейшая декомпозиция задачи",
+		"stage": "Define",
+		"time": 1,
 		"checked": false
 	  },
 	  {
-		"name": "Создание прототипа",
-		"stage": "Разработка",
-		"time": 120,
+		"name": "Проектирование и прототипирование",
+		"stage": "Ideation",
+		"time": 5,
+		"checked": true
+	  },
+	  {
+		"name": "Сбор референсов",
+		"stage": "Ideation",
+		"time": 3,
 		"checked": false
 	  },
 	  {
-		"name": "Тестирование прототипа",
-		"stage": "Разработка",
-		"time": 60,
+		"name": "Проработка IA",
+		"stage": "Ideation",
+		"time": 3,
 		"checked": false
 	  },
 	  {
-		"name": "Получение обратной связи",
-		"stage": "Разработка",
-		"time": 45,
+		"name": "CJM to-be",
+		"stage": "Ideation",
+		"time": 4,
 		"checked": false
 	  },
 	  {
-		"name": "Внедрение решения",
-		"stage": "Доставка",
-		"time": 120,
+		"name": "Дальнейшая декомпозиция задачи",
+		"stage": "Ideation",
+		"time": 1,
 		"checked": false
 	  },
 	  {
-		"name": "Оценка результатов",
-		"stage": "Доставка",
-		"time": 60,
+		"name": "Дизайн исследования",
+		"stage": "Research",
+		"time": 3,
 		"checked": false
 	  },
 	  {
-		"name": "Планирование дальнейших улучшений",
-		"stage": "Доставка",
-		"time": 30,
+		"name": "Дизайн исследования",
+		"stage": "Research",
+		"time": 3,
+		"checked": true
+	  },
+	  {
+		"name": "Поиск респондентов",
+		"stage": "Research",
+		"time": 1,
+		"checked": true
+	  },
+	  {
+		"name": "Проведение исследования",
+		"stage": "Research",
+		"time": 3,
+		"checked": true
+	  },
+	  {
+		"name": "Внесение изменений по результатам исследований",
+		"stage": "Research",
+		"time": 1,
+		"checked": true
+	  },
+	  {
+		"name": "Анализ полученных результатов, подведение итогов",
+		"stage": "Research",
+		"time": 3,
+		"checked": true
+	  },
+	  {
+		"name": "Дальнейшая декомпозиция задачи",
+		"stage": "Research",
+		"time": 1,
 		"checked": false
+	  },
+	  {
+		"name": "Детализация UI",
+		"stage": "UI Design",
+		"time": 8,
+		"checked": true
+	  },
+	  {
+		"name": "Адаптивы",
+		"stage": "UI Design",
+		"time": 3,
+		"checked": false
+	  },
+	  {
+		"name": "Состояния",
+		"stage": "UI Design",
+		"time": 2,
+		"checked": false
+	  },
+	  {
+		"name": "Организация макетов",
+		"stage": "UI Design",
+		"time": 0.5,
+		"checked": true
+	  },
+	  {
+		"name": "Актуализация User flow",
+		"stage": "UI Design",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "Актуализация IA",
+		"stage": "UI Design",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "Написание документации",
+		"stage": "Documentation",
+		"time": 6,
+		"checked": true
+	  },
+	  {
+		"name": "Внесение изменений после фидбэка",
+		"stage": "Documentation",
+		"time": 1,
+		"checked": false
+	  },
+	  {
+		"name": "Проверка реализации и фидбэк",
+		"stage": "Design Review",
+		"time": 2,
+		"checked": true
 	  }
 	]
   }
