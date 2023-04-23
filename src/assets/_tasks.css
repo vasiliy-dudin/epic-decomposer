@@ -16,15 +16,34 @@
 .task-item {
 	display: flex;
 }
-.form-check {
-	flex: 1 0 auto;
+.task-item:hover {
+    outline: 1px solid #b9c9d3;
+    outline-offset: 4px;
 }
+
+.form-check {
+	flex: 1 1 auto;
+	align-self: center;
+	position: relative;
+}
+.form-check-label {
+	display: block;
+}
+.form-check-label:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -11px;
+    right: 0px;
+    bottom: -11px;
+}
+
 .input-time {
 	display: inline-flex;
 	flex: 0 0 auto;
 	align-items: center;
 }
 .input-time__input {
-	width: 90px;
+	width: 80px;
 	margin-right: 8px;
 }
