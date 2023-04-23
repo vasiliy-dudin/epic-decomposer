@@ -196,12 +196,12 @@
 			resetData() {
 				this.tasks = this.tasks.map((task, index) => ({
 					...task,
-					checked: false,
+					checked: this.defaultTasks[index].checked,
 					time: this.defaultTasks[index].time,
 				}));
 				this.epicName = "";
 				this.saveState();
-			},
+			}
 		},
 	};
 </script>
