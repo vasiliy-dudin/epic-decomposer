@@ -3,11 +3,11 @@
 		<input
 			class="form-check-input"
 			type="checkbox"
-			:id="task.name"
+			:id="uniqueId"
 			:checked="task.checked"
 			@change="toggleCheck"
 		/>
-		<label class="form-check-label" :for="task.name">{{ task.name }}</label>
+		<label class="form-check-label" :for="uniqueId">{{ task.name }}</label>
 	</div>
 	<div class="input-time">
 		<input
@@ -23,10 +23,17 @@
 </template>
 
 <script>
+	import { nanoid } from "nanoid";
+
 	export default {
 		name: "TaskItem",
 		props: {
 			task: Object,
+		},
+		data() {
+			return {
+				uniqueId: nanoid(6),
+			};
 		},
 		methods: {
 			toggleCheck() {
