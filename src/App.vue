@@ -30,9 +30,7 @@
 						v-for="(stage, stageIndex) in stages"
 						:key="'stage' + stageIndex"
 					>
-						<h4>
-							{{ stage.name }}: {{ stageTotalTime(stage) }}
-						</h4>
+						<h4>{{ stage.name }}: {{ stageTotalTime(stage) }}</h4>
 						<div
 							class="task-item"
 							v-for="(task, taskIndex) in tasksByStage(stage)"
@@ -62,22 +60,32 @@
 						<button
 							class="output-stage__btn btn btn-sm btn-outline-dark"
 							@click="copyToClipboard(stage)"
-							>
+						>
 							Copy Plan
 						</button>
-						<div class="output-stage__time">{{ stageTotalTime(stage) / 4 }} d 
-							<span class="output-stage__time__hours text-muted">{{ stageTotalTime(stage)}} h</span>
+						<div class="output-stage__time">
+							{{ stageTotalTime(stage) / 4 }} d
+							<span class="output-stage__time__hours text-muted"
+								>{{ stageTotalTime(stage) }} h</span
+							>
 						</div>
-					</div>					
-					<pre class="pre-scrollable"><code>{{ filteredTasks(stage).map(task => `* ${task.name} - ${task.time} ч.`).join('\n') }}</code></pre>
+					</div>
+					<pre
+						class="pre-scrollable"
+					><code>{{ filteredTasks(stage).map(task => `* ${task.name} - ${task.time} ч.`).join('\n') }}</code></pre>
 				</div>
 				<h6 class="results-total">
 					<span>Total:</span>
-					<span class="badge rounded-pill bg-dark">{{ totalTime }} Hours</span>
-					<span class="badge rounded-pill bg-dark">{{ totalTime / 4 }} Days</span>
-					<span class="badge rounded-pill bg-dark">{{ totalTime / 4 / 5 }} Weeks</span>
-					
-				</h6>				
+					<span class="badge rounded-pill bg-dark"
+						>{{ totalTime }} Hours</span
+					>
+					<span class="badge rounded-pill bg-dark"
+						>{{ totalTime / 4 }} Days</span
+					>
+					<span class="badge rounded-pill bg-dark"
+						>{{ totalTime / 4 / 5 }} Weeks</span
+					>
+				</h6>
 			</div>
 		</div>
 	</div>
@@ -170,6 +178,7 @@
 				const state = {
 					tasks: this.tasks.map((task) => ({
 						name: task.name,
+						stage: task.stage,
 						checked: task.checked,
 						time: task.time,
 					})),
@@ -186,7 +195,8 @@
 					const state = JSON.parse(savedState);
 					this.tasks = this.tasks.map((task) => {
 						const savedTask = state.tasks.find(
-							(t) => t.name === task.name
+							(t) =>
+								t.name === task.name && t.stage === task.stage
 						);
 						return savedTask ? { ...task, ...savedTask } : task;
 					});
@@ -201,7 +211,8 @@
 				}));
 				this.epicName = "";
 				this.saveState();
-			}
+				this.updateTotalTime();
+			},
 		},
 	};
 </script>

@@ -30,6 +30,7 @@
 		props: {
 			task: Object,
 		},
+		emits: ["toggleCheck", "timeChange"],
 		data() {
 			return {
 				uniqueId: nanoid(6),

@@ -147,12 +147,7 @@
 		"time": 1,
 		"checked": false
 	  },
-	  {
-		"name": "Дизайн исследования",
-		"stage": "Research",
-		"time": 3,
-		"checked": false
-	  },
+
 	  {
 		"name": "Дизайн исследования",
 		"stage": "Research",
