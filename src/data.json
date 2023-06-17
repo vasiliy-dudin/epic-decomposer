@@ -246,50 +246,50 @@
 			"checked": false
 		},
 		{
-			"name": "Детализация UI",
-			"stage": "UI Design",
+			"name": "Детализация десктопной версии",
+			"stage": "Детализация UI",
 			"time": 6,
 			"checked": true
 		},
 		{
 			"name": "Адаптивы",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 2,
 			"checked": true
 		},
 		{
 			"name": "Состояния",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 2,
 			"checked": true
 		},
 		{
 			"name": "Организация макетов",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 0.5,
 			"checked": true
 		},
 		{
 			"name": "Доработка User flow",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 1,
 			"checked": false
 		},
 		{
 			"name": "Доработка информационной архитектуры",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 1,
 			"checked": false
 		},
 		{
 			"name": "Подготовка компонентов для экспорта",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 0.5,
 			"checked": false
 		},
 		{
 			"name": "Внесение изменений после фидбэка",
-			"stage": "UI Design",
+			"stage": "Детализация UI",
 			"time": 0.5,
 			"checked": false
 		},
