@@ -54,7 +54,7 @@
 			"checked": false
 		},
 		{
-			"name": "User flow as-is",
+			"name": "User Flow as-is",
 			"stage": "Погружение в задачу",
 			"time": 2,
 			"checked": false
@@ -84,7 +84,7 @@
 			"checked": true
 		},
 		{
-			"name": "User flow as-is",
+			"name": "User Flow as-is",
 			"stage": "Проектирование концепции",
 			"time": 2,
 			"checked": false
@@ -171,6 +171,12 @@
 			"name": "Проработка информационной архитектуры",
 			"stage": "Поиск решений",
 			"time": 3,
+			"checked": false
+		},
+		{
+			"name": "User Flow to-be",
+			"stage": "Поиск решений",
+			"time": 4,
 			"checked": false
 		},
 		{
@@ -270,7 +276,7 @@
 			"checked": true
 		},
 		{
-			"name": "Доработка User flow",
+			"name": "Доработка User Flow",
 			"stage": "Детализация UI",
 			"time": 1,
 			"checked": false
