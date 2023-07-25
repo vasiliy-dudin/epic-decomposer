@@ -156,6 +156,12 @@
 			"checked": true
 		},
 		{
+			"name": "UX-редактура",
+			"stage": "Поиск решений",
+			"time": 2,
+			"checked": true
+		},
+		{
 			"name": "Сбор референсов",
 			"stage": "Поиск решений",
 			"time": 3,
@@ -274,6 +280,18 @@
 			"stage": "Детализация UI",
 			"time": 0.5,
 			"checked": true
+		},
+		{
+			"name": "UX-редактура",
+			"stage": "Детализация UI",
+			"time": 2,
+			"checked": false
+		},
+		{
+			"name": "Подготовка контента",
+			"stage": "Детализация UI",
+			"time": 3,
+			"checked": false
 		},
 		{
 			"name": "Доработка User Flow",
